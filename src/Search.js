@@ -32,4 +32,5 @@ function Search({ value, onChange, children }) {
   );
 }
 
+export { Search };
 export default App;
