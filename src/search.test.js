@@ -8,5 +8,7 @@ describe('Search', () => {
     render(<Search />);
 
     expect(screen.getByText('Search:')).toBeInTheDocument();
+
+//    expect(screen.getByText(/Search/)).toBeInTheDocument();
   });
 });
