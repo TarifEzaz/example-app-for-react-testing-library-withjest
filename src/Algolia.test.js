@@ -30,3 +30,22 @@ describe('Algolia', () => {
     expect(items).toHaveLength(2);
   });
 });
+
+describe('App', () => {
+
+
+  it('fetches stories from an API and fails', async () => {
+
+    axios.get.mockImplementationOnce(() =>
+      Promise.reject(new Error())
+    );
+
+    render(<App />);
+
+    await userEvent.click(screen.getByRole('button'));
+
+    const message = await screen.findByText(/Something went wrong/);
+
+    expect(message).toBeInTheDocument();
+  });
+});
