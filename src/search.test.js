@@ -7,6 +7,6 @@ describe('Search', () => {
   it('renders Search component', () => {
     render(<Search />);
 
-    screen.getByText('Search:');
+    expect(screen.getByText('Search:')).toBeInTheDocument();
   });
 });
