@@ -12,7 +12,6 @@ function App() {
 
 		try {
 			result = await axios.get(`${URL}?query=React`);
-
 			setStories(result.data.hits);
 		} catch (error) {
 			setError(error);
@@ -28,11 +27,11 @@ function App() {
 			{error && <span>Something went wrong ...</span>}
 
 			<ul>
-			{stories.map((story) => (
-				<li key={story.objectID}>
-				<a href={story.url}>{story.title}</a>
-				</li>
-			))}
+				{stories.map((story) => (
+					<li key={story.objectID}>
+					<a href={story.url}>{story.title}</a>
+					</li>
+				))}
 			</ul>
 		</div>
 	);
